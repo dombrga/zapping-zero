@@ -1,5 +1,7 @@
 ---
 const { platform, username } = Astro.props
+const url = platform === 'frontendmentor' ?
+              `https://www.${platform}.io/profile/${username}` : `https://www.${platform}.com/${username}`
 ---
 <style>
   a {
@@ -10,4 +12,4 @@ const { platform, username } = Astro.props
   }
 </style>
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a href={url}>{platform}</a>
